@@ -1,0 +1,17 @@
+.dialog{
+    width : 325;
+    height: 255;
+    padding: 10px;
+    border : 2px #000 solid;
+   border-radius:49% 51% 54% 46% / 61% 66% 34% 39%  ;
+}
+.login{
+    width: 350;
+    height: 500px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+tr:nth-child(even) {
+    background-color: #dddddd;
+    color: #000;
+}

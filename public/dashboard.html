@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- STYLES-->
+     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+     <link rel="stylesheet" href="styles.css">
+    
+     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+     <script src="../Scripts/bootstrap.js"></script>
+    <script src="../Scripts/tableToExcel.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.4/js/dataTables.jqueryui.min.js"></script>
+    <script src="https://cdn.datatables.net/scroller/2.0.5/js/dataTables.scroller.min.js"></script>
+
+    <!--styles-->
+
+    <link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css">
+    <link href="https://cdn.datatables.net/1.11.4/css/dataTables.jqueryui.min.css" rel="stylesheet" type="text/css">
+    <link href="https://cdn.datatables.net/scroller/2.0.5/css/scroller.jqueryui.min.css" rel="stylesheet" type="text/css">
+
+    <title>USER INTERFACE</title>
+   
+
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center flex-column">
+            <div class="col-md-4 col-lg-4">
+                <h1 class="text-center my-5 text-info">
+                    Your Data
+                </h1>
+
+                 
+            </div>
+            <div class="col-md-4 col-lg-4 mx-auto">
+                <div class="nav-item my-2"> <label class="text-secondary">Username <br>
+                    <input type="text"  id="u" placeholder="new username"></label></div>
+                <div class="nav-item my-2"> <label class="text-secondary">email <br> <input type="email"  id="e" placeholder="your currently email"></label></div>
+               
+                <button class="btn btn-outline-success" id="edit">Edit</button>
+
+            </div>
+            <br>
+            <hr>
+            <br>
+            <div class="col-md-4 text-success my-3">
+                <label class="mx-2 p-1">Insert amount</label>
+                <input type="number" placeholder="Enter the amount" class="p-1" id="amount">
+   
+                <label class="mx-2 my-2">Insert Subject</label>
+           
+                <input class="my-2 p-1" type="text" placeholder="Enter the subject" class="p-1" id="sub">
+                <button class="btn btn-outline-dark mx-2 " id="add">Insert</button></div>
+            <div class="col-md-9">
+                <span style="padding-right: 10px; float: right;">
+                    <button class="btn my-2 btn-dark text-white" onclick="export_to_exell()">export to exell</button>
+                </span>
+                <script>
+                     function export_to_exell() {
+            TableToExcel.convert(document.getElementById("example"));
+        }
+                </script>
+                
+                <table id="myTable" class="table-danger text-white" style="width:100%">
+                    <thead class="bg-dark ">
+                        <tr>
+                            <th>Date Created</th>
+                            <th>Amount $</th>
+                            <th>Subject</th>
+                            <th> 70% of amount</th>
+                            <th>30% of amount</th>
+                            
+                        </tr>
+                        <!-- <tr id="loop">
+                            <th>{{date}}</th>
+                            <th>{{amount}}</th>
+                            <th>{{Subject}}</th>
+                            <th> {{70% of amount}}</th>
+                            <th>{{30% of amount}}</th>
+                        </tr> -->
+                    </thead>
+                </table>
+                <br>
+                <br>
+                <br>
+
+                <div style="width:50%;">
+                    <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+                           </div>
+        </div>
+    </div>
+ <script src="../node_modules/axios/dist/axios.min.js"></script>
+ <script src="../node_modules/chart.js/dist/chart.umd.js"></script>
+ <script  src="getData.js"></script>
+     
+</body>
+</html>
